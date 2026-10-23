@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>milo - Roblox sign-in</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+  :root { --teal: #2EC4B6; --navy: #0B1F3A; --amber: #FFB703; --mist: #F4F7F6; }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: var(--navy); color: var(--navy); font-family: Nunito, system-ui, sans-serif; padding: 16px;
+  }
+  .card { background: var(--mist); border-radius: 18px; padding: 28px 24px; width: 100%; max-width: 440px; text-align: center; }
+  .mark { font-weight: 800; font-size: 28px; color: var(--teal); margin: 0 0 4px; }
+  h1 { font-size: 20px; margin: 0 0 16px; }
+  p { margin: 0 0 14px; line-height: 1.45; }
+  .code {
+    font-family: ui-monospace, Consolas, monospace; font-size: 13px; background: #fff; border: 2px solid var(--teal);
+    border-radius: 10px; padding: 12px; word-break: break-all; margin: 0 0 14px; user-select: all;
+  }
+  button {
+    font: inherit; font-weight: 800; font-size: 17px; border: 0; border-radius: 10px; padding: 12px 20px; width: 100%;
+    background: var(--teal); color: var(--navy); cursor: pointer;
+  }
+  .timer { font-weight: 800; color: var(--navy); }
+  .late { color: #C0392B; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+<main class="card">
+  <p class="mark">milo</p>
+  <div id="ok" class="hidden">
+    <h1>Almost done</h1>
+    <p>Copy this code, go back to Discord, press <b>Paste code</b> and paste it.</p>
+    <div class="code" id="code"></div>
+    <button id="copy" type="button">Copy code</button>
+    <p style="margin-top:14px">Time left: <span class="timer" id="timer">60</span> seconds</p>
+  </div>
+  <div id="fail" class="hidden">
+    <h1>Not linked</h1>
+    <p id="why"></p>
+    <p>Go back to Discord and press <b>Link Roblox</b> on <b>/premium</b> to try again.</p>
+  </div>
+</main>
+<script>
+  // Roblox sends people here after "Allow" with ?code=...&state=... Milo needs both, so they are shown as one
+  // "state:code" for the person to paste into Discord. Nothing is sent anywhere from this page.
+  var q = new URLSearchParams(location.search);
+  var code = q.get("code"), state = q.get("state");
+  if (code && state) {
+    var text = state + ":" + code;
+    document.getElementById("code").textContent = text;
+    document.getElementById("ok").classList.remove("hidden");
+    var btn = document.getElementById("copy");
+    btn.onclick = function () {
+      var done = function () { btn.textContent = "Copied"; };
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(text).then(done, function () { selectCode(); });
+      } else {
+        selectCode();
+      }
+    };
+    var left = 60, timer = document.getElementById("timer");
+    var tick = setInterval(function () {
+      left -= 1;
+      if (left <= 0) {
+        clearInterval(tick);
+        timer.parentNode.innerHTML = '<span class="late">This code has expired. Press Link Roblox in Discord to get a new one.</span>';
+        return;
+      }
+      timer.textContent = left;
+    }, 1000);
+  } else {
+    document.getElementById("why").textContent = q.get("error") === "access_denied"
+      ? "You didn't press Allow, so Milo can't see which Roblox account is yours."
+      : "Roblox didn't send a code back.";
+    document.getElementById("fail").classList.remove("hidden");
+  }
+  function selectCode() {
+    var r = document.createRange();
+    r.selectNodeContents(document.getElementById("code"));
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    btn.textContent = "Selected - copy it";
+  }
+</script>
+</body>
+</html>

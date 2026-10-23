@@ -76,7 +76,7 @@ code {
 .btn.ghost:hover { background: rgba(255, 255, 255, .08); }
 
 /* home hero */
-.hero { background: var(--navy); color: var(--mist); padding: 40px 0 64px; }
+.hero { background: var(--navy); color: var(--mist); padding: 40px 0 52px; }
 .hero .wrap { display: grid; grid-template-columns: 1.25fr .75fr; gap: 32px; align-items: center; }
 .hero h1 { font-size: 46px; line-height: 1.1; margin: 0 0 18px; font-weight: 900; letter-spacing: -1px; }
 .hero h1 span { color: var(--teal); }
@@ -125,7 +125,7 @@ p { margin: 0 0 14px; }
   font-family: "gg sans", "Noto Sans", Helvetica, Arial, sans-serif;
   font-size: 15px;
   line-height: 1.4;
-  margin-top: -40px;
+  margin-top: 28px;
   box-shadow: 0 10px 30px rgba(11, 31, 58, .18);
 }
 .discord .msg { display: grid; grid-template-columns: 40px 1fr; gap: 0 14px; }
@@ -227,7 +227,7 @@ footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
   .hero h1 { font-size: 34px; }
   .hero .mascot { display: none; }
   .split, .split.wide-left { grid-template-columns: 1fr; gap: 20px; }
-  .discord { margin-top: -30px; }
+  .discord { margin-top: 20px; }
   .pagehead h1 { font-size: 30px; }
   .plans > div { border-right: 0; border-bottom: 1px solid var(--line); }
   .plans > div:last-child { border-bottom: 0; }

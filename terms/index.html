@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Terms of service - milo</title>
+<meta name="description" content="The rules for using milo and milo Premium.">
+<link rel="canonical" href="https://milo-bot.xyz/terms/">
+<meta property="og:title" content="Terms of service - milo">
+<meta property="og:description" content="The rules for using milo and milo Premium.">
+<meta property="og:url" content="https://milo-bot.xyz/terms/">
+<meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<style>
+@font-face { font-family: "Nunito"; src: url("/assets/nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+body { margin: 0; background: #F4F7F6; }
+a { color: #0B1F3A; text-decoration-color: #2EC4B6; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #1f9a8f; }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: .88em; background: #e4ebea; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.top { background: #0B1F3A; color: #F4F7F6; }
+.top .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 26px; padding-top: 16px; padding-bottom: 16px; }
+.wordmark { display: flex; align-items: center; gap: 8px; color: #F4F7F6; text-decoration: none; font-weight: 900; font-size: 27px; letter-spacing: -.5px; }
+.wordmark:hover { color: #F4F7F6; }
+.wordmark img { width: 34px; height: 34px; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-right: auto; }
+.top nav a { color: #c9d6e3; text-decoration: none; font-weight: 700; font-size: 16px; }
+.top nav a:hover, .top nav a.on { color: #fff; }
+.top nav a.on { box-shadow: 0 2px 0 #2EC4B6; }
+.btn { display: inline-block; background: #2EC4B6; color: #0B1F3A; font-weight: 800; text-decoration: none; padding: 11px 20px; border-radius: 8px; font-size: 17px; line-height: 1.2; }
+.btn:hover { background: #46d3c6; color: #0B1F3A; }
+.btn.small { padding: 8px 14px; font-size: 15px; }
+.pagehead { background: #0B1F3A; color: #F4F7F6; padding: 30px 0 38px; }
+.pagehead h1 { margin: 0 0 6px; font-size: 36px; font-weight: 900; letter-spacing: -.5px; }
+.pagehead p { margin: 0; color: #c9d6e3; max-width: 40em; font-size: 18px; }
+main { padding: 12px 0 40px; }
+section { padding: 34px 0 10px; }
+h2 { font-size: 28px; font-weight: 900; margin: 0 0 10px; letter-spacing: -.3px; }
+h3 { font-size: 20px; font-weight: 800; margin: 26px 0 6px; }
+p { margin: 0 0 14px; }
+.muted { color: #4c5d72; }
+.split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+.shot { border: 2px dashed #b6c4c1; border-radius: 10px; background: #eaf0ee; color: #4c5d72; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 320px; padding: 20px; font-size: 15px; font-weight: 700; }
+.plans { display: flex; flex-wrap: wrap; background: #fff; border-radius: 10px; border: 1px solid #d9e2e0; margin: 14px 0 8px; }
+.plans > div { flex: 1 1 220px; padding: 20px 22px; border-right: 1px solid #d9e2e0; }
+.plans > div:last-child { border-right: 0; }
+.plans .price { font-size: 30px; font-weight: 900; }
+.plans .price small { font-size: 16px; font-weight: 700; color: #4c5d72; }
+.plans .age { margin: 0; font-size: 14px; font-weight: 800; color: #9a5b00; }
+.plans .age.ok { color: #1f7a71; }
+.note { background: #fff4d6; border-radius: 8px; padding: 14px 18px; margin: 10px 0 18px; }
+.plans .name { font-weight: 800; color: #4c5d72; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 10px 0 0; }
+ol.steps li { counter-increment: s; position: relative; padding: 0 0 18px 50px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; background: #0B1F3A; color: #F4F7F6; font-weight: 900; text-align: center; line-height: 34px; }
+ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ul.plain li { margin-bottom: 6px; }
+.callout { background: #0B1F3A; color: #F4F7F6; border-radius: 12px; padding: 28px 30px; margin: 40px 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; }
+.callout h2 { margin: 0; font-size: 24px; }
+.callout p { margin: 4px 0 0; color: #c9d6e3; }
+.callout .grow { flex: 1 1 300px; }
+footer { border-top: 1px solid #d9e2e0; padding: 26px 0 36px; font-size: 15px; color: #4c5d72; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { color: #4c5d72; }
+footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 20px; }
+  .plans > div { border-right: 0; border-bottom: 1px solid #d9e2e0; }
+  .plans > div:last-child { border-bottom: 0; }
+  .top .btn { display: none; }
+}
+.doc { max-width: 720px; padding-top: 18px; }
+.doc h2 { font-size: 22px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div style="font-family: Nunito, system-ui, sans-serif; font-size: 17px; line-height: 1.55; color: #0B1F3A; background: #F4F7F6; min-height: 100%;">
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
+    <nav>
+      <a href="/features/">Features</a>
+      <a href="/commands/">Commands</a>
+      <a href="/premium/">Premium</a>
+      <a href="/custom-bot/">Custom Bot</a>
+    </nav>
+    <a class="btn small" href="/invite/">Add to Discord</a>
+  </div>
+</header>
+
+<div class="pagehead">
+  <div class="wrap">
+    <h1>Terms of service</h1>
+    <p>Last updated: October 23, 2026</p>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <article class="doc">
+      <p>By adding Milo to a server, using its commands, or buying Premium, you agree to these terms, to Milo's <a href="/privacy/">privacy policy</a>, and to Discord's Terms of Service. If you don't agree, please don't use Milo.</p>
+      <h2>Who can use Milo</h2>
+      <ul class="plain">
+        <li>You need to be old enough to use Discord where you live (13 in most countries).</li>
+        <li>The monthly Premium and Custom Bot plans are bought in the milo Shop game on Roblox, which only lets in players 16 and over. The lifetime pass is sold on the Roblox website and anyone can buy it.</li>
+        <li>If you're under 18, ask a parent or guardian before buying anything.</li>
+      </ul>
+      <h2>Using Milo</h2>
+      <ul class="plain">
+        <li>Milo runs miles programs for PTFS airlines on Discord. It isn't made by or connected to Discord, Roblox, or the makers of PTFS.</li>
+        <li>Miles, tiers, achievements and rewards are just for fun inside each airline. They have no real-world value and can't be exchanged for money.</li>
+        <li>Airlines (server admins and staff) decide how miles are earned and what rewards cost, and can change or remove miles. Disputes about miles are between you and the airline.</li>
+        <li>Don't abuse Milo: no exploiting bugs, faking flights, automating commands, or using Milo to harass others. Don't try to get at data that isn't yours, or to slow Milo down for everyone else.</li>
+      </ul>
+      <h2>Running an airline with Milo</h2>
+      <ul class="plain">
+        <li>If you add Milo to a server, you're responsible for how it's set up there, and for letting your members know that Milo keeps track of their miles and flights.</li>
+        <li>Names, logos, emojis and text you add to Milo (branding, tiers, achievements, rewards and so on) must be yours to use and must follow Discord's rules. The bot owner can remove anything that doesn't.</li>
+      </ul>
+      <h2>Premium</h2>
+      <ul class="plain">
+        <li>Premium is bought on Roblox (subscription or game pass) and applies to one Discord server.</li>
+        <li>Subscriptions renew monthly through Roblox until cancelled there. Premium stays on until the end of the period already paid for.</li>
+        <li>Game passes can each be used once. Premium from them can't be moved to another server after it's applied, except by the bot owner.</li>
+        <li>Refunds follow Roblox's rules. If Roblox refunds a purchase, the Premium it gave may be removed.</li>
+        <li>Premium features may change over time. If a feature you paid for is removed while your Premium is active, contact the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</li>
+      </ul>
+      <h2>Custom Bot</h2>
+      <ul class="plain">
+        <li>Custom Bot is an add-on to Premium. You create the bot in the Discord Developer Portal, so the bot account is yours and has to follow Discord's Developer Terms of Service.</li>
+        <li>Milo stores your bot's token encrypted and only uses it to run your bot. If you think the token leaked, reset it in the Developer Portal and run <code>/custombot setup</code> again.</li>
+        <li>Milo can stop your bot if it's used to break these terms or Discord's rules.</li>
+      </ul>
+      <h2>Blocking and ending</h2>
+      <ul class="plain">
+        <li>The bot owner can block users or servers that break these terms, and can remove Premium that was gained through a bug or a purchase that was later refunded. Premium removed for breaking these terms isn't refunded.</li>
+        <li>You can stop using Milo at any time by removing it from your server. To delete your data, see the <a href="/privacy/">privacy policy</a>.</li>
+      </ul>
+      <h2>Milo's name and look</h2>
+      <p>The Milo name, mascot, artwork and code belong to the bot owner. You're welcome to share screenshots and talk about Milo, but don't copy its look to pass another bot off as Milo.</p>
+      <h2>Availability and responsibility</h2>
+      <ul class="plain">
+        <li>Milo is provided as it is, with no promise that it will always be online or free of bugs. It may go offline, lose data or change without notice, although daily backups are kept.</li>
+        <li>As far as the law allows, the bot owner isn't responsible for losses from using Milo, such as lost miles, downtime, or what an airline does with it. If anything is ever owed, it's no more than what you paid for Premium in the 12 months before.</li>
+        <li>Roblox and Discord have their own terms, and Milo isn't responsible for their services.</li>
+      </ul>
+      <h2>The website</h2>
+      <p>milo-bot.xyz is part of Milo, and these terms apply to it too.</p>
+      <h2>Changes and contact</h2>
+      <p>These terms may change. When they do, the date at the top changes too, and big changes are announced in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>. Using Milo after a change means you accept the new terms. Questions: the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
+    <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="/terms/">Terms</a>
+    <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>

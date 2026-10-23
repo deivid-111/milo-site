@@ -12,9 +12,97 @@
 <meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
 <meta name="theme-color" content="#0B1F3A">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/assets/style.css">
+<style>
+@font-face { font-family: "Nunito"; src: url("/assets/nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+body { margin: 0; background: #F4F7F6; }
+a { color: #0B1F3A; text-decoration-color: #2EC4B6; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #1f9a8f; }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: .88em; background: #e4ebea; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.top { background: #0B1F3A; color: #F4F7F6; }
+.top .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 26px; padding-top: 16px; padding-bottom: 16px; }
+.wordmark { display: flex; align-items: center; gap: 8px; color: #F4F7F6; text-decoration: none; font-weight: 900; font-size: 27px; letter-spacing: -.5px; }
+.wordmark:hover { color: #F4F7F6; }
+.wordmark img { width: 34px; height: 34px; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-right: auto; }
+.top nav a { color: #c9d6e3; text-decoration: none; font-weight: 700; font-size: 16px; }
+.top nav a:hover, .top nav a.on { color: #fff; }
+.top nav a.on { box-shadow: 0 2px 0 #2EC4B6; }
+.btn { display: inline-block; background: #2EC4B6; color: #0B1F3A; font-weight: 800; text-decoration: none; padding: 11px 20px; border-radius: 8px; font-size: 17px; line-height: 1.2; }
+.btn:hover { background: #46d3c6; color: #0B1F3A; }
+.btn.small { padding: 8px 14px; font-size: 15px; }
+.hero { background: #0B1F3A; color: #F4F7F6; padding: 40px 0 52px; }
+.hero .wrap { display: grid; grid-template-columns: 1.25fr .75fr; gap: 32px; align-items: center; }
+.hero h1 { font-size: 46px; line-height: 1.1; margin: 0 0 18px; font-weight: 900; letter-spacing: -1px; }
+.hero h1 span { color: #2EC4B6; }
+.hero p { font-size: 19px; color: #c9d6e3; margin: 0 0 26px; max-width: 34em; }
+.hero .actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px 22px; }
+.hero .actions a.plain { color: #F4F7F6; font-weight: 700; }
+.hero .mascot { justify-self: center; width: 250px; max-width: 70%; padding: 22px; background: #F4F7F6; border-radius: 50%; transform: rotate(-8deg); box-sizing: border-box; }
+.hero small { display: block; margin-top: 18px; color: #8ea3ba; font-size: 14px; }
+main { padding: 12px 0 40px; }
+section { padding: 34px 0 10px; }
+h2 { font-size: 28px; font-weight: 900; margin: 0 0 10px; letter-spacing: -.3px; }
+p { margin: 0 0 14px; }
+.lead { font-size: 19px; color: #4c5d72; max-width: 38em; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.split.wide-left { grid-template-columns: 1.3fr 1fr; }
+.split > * { min-width: 0; }
+.shot { border: 2px dashed #b6c4c1; border-radius: 10px; background: #eaf0ee; color: #4c5d72; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 320px; padding: 20px; font-size: 15px; font-weight: 700; }
+.shots { display: flex; flex-direction: column; align-items: flex-start; gap: 14px; }
+.crop { overflow: hidden; border-radius: 10px; box-shadow: 0 10px 30px rgba(11, 31, 58, .18); max-width: 100%; }
+.crop img { display: block; height: auto; }
+.screenshot { display: block; max-width: 100%; height: auto; border-radius: 10px; box-shadow: 0 10px 30px rgba(11, 31, 58, .18); }
+.discord { background: #313338; color: #dbdee1; border-radius: 10px; padding: 18px 18px 20px; font-family: "Noto Sans", Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.4; margin-top: 28px; box-shadow: 0 10px 30px rgba(11, 31, 58, .18); }
+.discord .msg { display: grid; grid-template-columns: 40px 1fr; gap: 0 14px; }
+.discord .msg + .msg { margin-top: 16px; }
+.discord .av { width: 40px; height: 40px; border-radius: 50%; }
+.discord .av.milo { background: #F4F7F6 url("/assets/milo-happy.png") center / 34px no-repeat; }
+.discord .av.user { background: #e67e22; }
+.discord .name { font-weight: 600; color: #f2f3f5; }
+.discord .name .tag { background: #5865f2; color: #fff; font-size: 10px; padding: 1px 4px; border-radius: 3px; margin-left: 4px; vertical-align: 2px; }
+.discord .time { color: #949ba4; font-size: 12px; margin-left: 6px; }
+.discord .slash { color: #949ba4; font-size: 13px; margin-bottom: 2px; }
+.discord .slash b { color: #c9cdfb; font-weight: 500; }
+.discord .embed { border-left: 4px solid #2EC4B6; background: #2b2d31; border-radius: 4px; padding: 10px 14px 12px; margin-top: 4px; max-width: 430px; }
+.discord .embed .t { font-weight: 700; color: #f2f3f5; margin-bottom: 4px; }
+.discord .embed .f { display: flex; gap: 26px; margin-top: 8px; flex-wrap: wrap; }
+.discord .embed .f div { font-size: 14px; }
+.discord .embed .f b { display: block; color: #f2f3f5; font-size: 13px; }
+.discord .embed .foot { font-size: 12px; color: #949ba4; margin-top: 10px; }
+ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 10px 0 0; }
+ol.steps li { counter-increment: s; position: relative; padding: 0 0 18px 50px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; background: #0B1F3A; color: #F4F7F6; font-weight: 900; text-align: center; line-height: 34px; }
+ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ul.plain li { margin-bottom: 6px; }
+.reviews { display: grid; grid-template-columns: 1.4fr 1fr; grid-template-rows: auto auto; gap: 18px; margin-top: 8px; }
+.review { margin: 0; background: #fff; border-radius: 10px; padding: 20px 22px; border: 1px solid #d9e2e0; }
+.review.big { display: flex; flex-direction: column; justify-content: space-between; margin-top: 8px; }
+.review blockquote { margin: 0 0 14px; font-size: 17px; }
+.review.big blockquote { font-size: 22px; font-weight: 700; line-height: 1.4; }
+.sample { align-self: flex-start; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .5px; padding: 1px 7px; border-radius: 4px; background: #FFB703; color: #0B1F3A; margin-bottom: 12px; }
+.review figcaption { font-size: 15px; color: #4c5d72; }
+.review figcaption b { color: #0B1F3A; }
+.review figcaption span { display: block; font-size: 14px; }
+.callout { background: #0B1F3A; color: #F4F7F6; border-radius: 12px; padding: 28px 30px; margin: 40px 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; }
+.callout h2 { margin: 0; font-size: 24px; }
+.callout p { margin: 4px 0 0; color: #c9d6e3; }
+.callout .grow { flex: 1 1 300px; }
+.callout a.plain { color: #F4F7F6; font-weight: 700; }
+footer { border-top: 1px solid #d9e2e0; padding: 26px 0 36px; font-size: 15px; color: #4c5d72; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { color: #4c5d72; }
+footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
+@media (max-width: 760px) {
+  .hero .wrap, .split, .split.wide-left, .reviews { grid-template-columns: 1fr; }
+  .hero h1 { font-size: 34px; }
+  .hero .mascot { display: none; }
+  .top .btn { display: none; }
+}
+</style>
 </head>
 <body>
+<div style="font-family: Nunito, system-ui, sans-serif; font-size: 17px; line-height: 1.55; color: #0B1F3A; background: #F4F7F6; min-height: 100%;">
 <header class="top">
   <div class="wrap">
     <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
@@ -27,18 +115,17 @@
     <a class="btn small" href="/invite/">Add to Discord</a>
   </div>
 </header>
+
 <div class="hero">
   <div class="wrap">
     <div>
-      <h1>Give your PTFS airline a <span>miles program</span>.</h1>
-      <p>milo is a Discord bot. After a flight your staff get one claim code per cabin, passengers type it in
-      Discord, and the miles go straight onto their profile. They climb tiers, unlock achievements and spend
-      what they earn in a shop you stock.</p>
+      <h1>Give your PTFS airline a <span>mileage program</span>.</h1>
+      <p>milo is a Discord bot. After a flight your staff get one claim code per cabin, passengers type it in Discord, and the miles go straight onto their profile. They climb tiers, unlock achievements and spend what they earn in a shop you stock.</p>
       <div class="actions">
         <a class="btn" href="/invite/">Add milo to your server</a>
         <a class="plain" href="https://discord.gg/qpW6Wdjt2f">Join the support server</a>
       </div>
-      <small>Free to use. Premium is optional.</small>
+      
     </div>
     <img class="mascot" src="/assets/milo-happy.png" alt="milo, a smiling cartoon plane">
   </div>
@@ -47,57 +134,32 @@
 <main>
   <div class="wrap">
     <div class="split wide-left">
-      <div class="discord" aria-label="Example of milo in a Discord channel">
-        <div class="msg">
-          <div class="av milo"></div>
-          <div>
-            <span class="name">milo<span class="tag">APP</span></span><span class="time">Today at 20:14</span>
-            <div class="embed">
-              <div class="t">MLO204 has landed</div>
-              London Heathrow to New York JFK. Passengers, use <b>/claim</b> with the code your crew gave your
-              cabin. Claims close in 60 minutes.
-            </div>
-          </div>
+      <div class="shots" style="margin-top: 28px;">
+        <div class="crop" style="width: 440px; aspect-ratio: 500 / 231;">
+          <img src="/assets/shot-flight-landed.png" alt="milo's flight landed post in Discord: EZE to FRA, 7,146 miles, claims open for an hour" width="586" height="526" style="width: 117.2%; transform: translateY(-56.08%);">
         </div>
-        <div class="msg">
-          <div class="av user"></div>
-          <div>
-            <div class="slash"><b>kayla_flies</b> used /claim</div>
-            <span class="name">milo<span class="tag">APP</span></span><span class="time">Today at 20:16</span>
-            <div class="embed">
-              <div class="t">Welcome back, kayla_flies</div>
-              <div class="f">
-                <div><b>Route</b>LHR to JFK</div>
-                <div><b>Cabin</b>Business</div>
-                <div><b>Miles</b>+5,163</div>
-              </div>
-              <div class="foot">Balance 18,420 - Gold</div>
-            </div>
-          </div>
-        </div>
+        <img class="screenshot" src="/assets/shot-claim.png" alt="A passenger's /claim in Discord: miles earned, a new tier and two achievements unlocked" width="326" height="237" style="width: 326px;">
       </div>
 
       <div>
-        <h2 style="margin-top:26px">How a flight works</h2>
+        <h2 style="margin-top: 26px;">How a flight works</h2>
         <ol class="steps">
-          <li><b>Your flight lands in PTFS.</b> Someone on staff runs <code>/flight log</code> with the flight
-          number and the two airports.</li>
+          <li><b>Your flight lands in PTFS.</b> Someone on staff runs <code>/flight log</code> with the flight number and the two airports.</li>
           <li><b>milo hands them three codes</b>, one each for Economy, Business and First. Only they see them.</li>
           <li><b>Staff give out the codes</b> however suits you: in game chat, a passengers channel, anywhere.</li>
-          <li><b>Passengers run <code>/claim</code>.</b> The code decides the cabin, so nobody gets First on an
-          Economy ticket.</li>
+          <li><b>Passengers run <code>/claim</code>.</b> The code decides the cabin, so nobody gets First on an Economy ticket.</li>
         </ol>
       </div>
     </div>
 
     <section>
       <div class="split">
-        <div class="shot tall">Screenshot: a /miles profile card</div>
         <div>
           <h2>What your passengers get</h2>
-          <p>Miles are based on the real distance between the two airports, so a long haul is worth more than a
-          hop. London to New York is about 3,442 miles, and Business and First pay 1.5x and 2x.</p>
-          <ul class="plain">
+          <p>Every claim shows what it earned, and tiers and achievements pop up the moment they're unlocked. Miles are based on the real distance between the two airports, so a long haul is worth more than a hop. Buenos Aires to Frankfurt is about 7.146 miles, and Business and First pay 1.5x and 2x.</p>
+        </div>
+        <div>
+          <ul class="plain" style="margin-top: 48px;">
             <li>A profile card with their balance, tier and rank (<code>/miles</code>)</li>
             <li>Tiers from Bronze up to Platinum, with a Discord role at each one if you want</li>
             <li>Nine achievements to start, like Long haul and Globetrotter</li>
@@ -111,7 +173,7 @@
 
     <section>
       <h2>Setting it up</h2>
-      <p class="lead">Most airlines are running in about five minutes. You need Manage Server for these.</p>
+      
       <div class="split">
         <ol class="steps">
           <li><code>/setup staff-role</code> picks who can log flights and fix miles.</li>
@@ -119,51 +181,33 @@
           <li><code>/reward add</code> puts something in the shop, so miles are worth chasing.</li>
         </ol>
         <div>
-          <p>That's all you have to do. If a flight goes wrong later, there's a fix for it: <code>/flight add</code>
-          for someone who missed the claim window, <code>/flight remove</code> for someone who wasn't on board,
-          and <code>/flight void</code> to cancel the whole thing and take the miles back.</p>
+          <p>That's all you have to do. If a flight goes wrong later, there's a fix for it: <code>/flight add</code> for someone who missed the claim window, <code>/flight remove</code> for someone who wasn't on board, and <code>/flight void</code> to cancel the whole thing and take the miles back.</p>
           <p><a href="/commands/">All commands</a></p>
         </div>
       </div>
     </section>
 
-    <section>
-      <h2>What airlines say</h2>
-      <div class="reviews">
-        <figure class="review big">
-          <blockquote>[Placeholder: a real review from an airline that uses milo goes here.]</blockquote>
-          <figcaption><b>[username]</b>, [Airline name]<span>[members] members</span></figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>[Placeholder: second review.]</blockquote>
-          <figcaption><b>[username]</b>, [Airline name]<span>[members] members</span></figcaption>
-        </figure>
-        <figure class="review">
-          <blockquote>[Placeholder: third review.]</blockquote>
-          <figcaption><b>[username]</b>, [Airline name]<span>[members] members</span></figcaption>
-        </figure>
-      </div>
-    </section>
 
     <div class="callout">
       <div class="grow">
         <h2>Want it to look like your airline?</h2>
-        <p>Premium puts your name, logo and color on everything milo posts, and adds events, alliances, daily
-        check-ins and crew miles. R$ 100 a month, and you can try it free for 14 days.</p>
+        <p>Premium puts your name, logo and color on everything milo posts, and adds events, alliances, daily check-ins and crew miles. R$ 100 a month, and you can try it free for 14 days.</p>
       </div>
       <a class="btn" href="/premium/">About Premium</a>
       <a class="plain" href="/custom-bot/">or run milo as your own bot</a>
     </div>
   </div>
 </main>
+
 <footer>
   <div class="wrap">
     <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
     <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vQ2aJY8wznRWtZervBzT9qdybBD7tIZwBarFXPyVMgGYL8mH23yT4iZwswvsJkdyMjI6jf54b5B3PDY/pub">Privacy policy</a>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vSMSjcQ5gONOlvXYWmrGIHIYTxuejfHN8LNlNqK2IRm31i4ZxQmjNl58iIXmZ3eehfiBrLxhLV3OAn7/pub">Terms</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="/terms/">Terms</a>
     <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
   </div>
 </footer>
+</div>
 </body>
 </html>

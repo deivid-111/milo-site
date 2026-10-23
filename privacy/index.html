@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy policy - milo</title>
+<meta name="description" content="What milo stores about you, why, and how to delete it.">
+<link rel="canonical" href="https://milo-bot.xyz/privacy/">
+<meta property="og:title" content="Privacy policy - milo">
+<meta property="og:description" content="What milo stores about you, why, and how to delete it.">
+<meta property="og:url" content="https://milo-bot.xyz/privacy/">
+<meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<style>
+@font-face { font-family: "Nunito"; src: url("/assets/nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+body { margin: 0; background: #F4F7F6; }
+a { color: #0B1F3A; text-decoration-color: #2EC4B6; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #1f9a8f; }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: .88em; background: #e4ebea; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.top { background: #0B1F3A; color: #F4F7F6; }
+.top .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 26px; padding-top: 16px; padding-bottom: 16px; }
+.wordmark { display: flex; align-items: center; gap: 8px; color: #F4F7F6; text-decoration: none; font-weight: 900; font-size: 27px; letter-spacing: -.5px; }
+.wordmark:hover { color: #F4F7F6; }
+.wordmark img { width: 34px; height: 34px; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-right: auto; }
+.top nav a { color: #c9d6e3; text-decoration: none; font-weight: 700; font-size: 16px; }
+.top nav a:hover, .top nav a.on { color: #fff; }
+.top nav a.on { box-shadow: 0 2px 0 #2EC4B6; }
+.btn { display: inline-block; background: #2EC4B6; color: #0B1F3A; font-weight: 800; text-decoration: none; padding: 11px 20px; border-radius: 8px; font-size: 17px; line-height: 1.2; }
+.btn:hover { background: #46d3c6; color: #0B1F3A; }
+.btn.small { padding: 8px 14px; font-size: 15px; }
+.pagehead { background: #0B1F3A; color: #F4F7F6; padding: 30px 0 38px; }
+.pagehead h1 { margin: 0 0 6px; font-size: 36px; font-weight: 900; letter-spacing: -.5px; }
+.pagehead p { margin: 0; color: #c9d6e3; max-width: 40em; font-size: 18px; }
+main { padding: 12px 0 40px; }
+section { padding: 34px 0 10px; }
+h2 { font-size: 28px; font-weight: 900; margin: 0 0 10px; letter-spacing: -.3px; }
+h3 { font-size: 20px; font-weight: 800; margin: 26px 0 6px; }
+p { margin: 0 0 14px; }
+.muted { color: #4c5d72; }
+.split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+.shot { border: 2px dashed #b6c4c1; border-radius: 10px; background: #eaf0ee; color: #4c5d72; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 320px; padding: 20px; font-size: 15px; font-weight: 700; }
+.plans { display: flex; flex-wrap: wrap; background: #fff; border-radius: 10px; border: 1px solid #d9e2e0; margin: 14px 0 8px; }
+.plans > div { flex: 1 1 220px; padding: 20px 22px; border-right: 1px solid #d9e2e0; }
+.plans > div:last-child { border-right: 0; }
+.plans .price { font-size: 30px; font-weight: 900; }
+.plans .price small { font-size: 16px; font-weight: 700; color: #4c5d72; }
+.plans .age { margin: 0; font-size: 14px; font-weight: 800; color: #9a5b00; }
+.plans .age.ok { color: #1f7a71; }
+.note { background: #fff4d6; border-radius: 8px; padding: 14px 18px; margin: 10px 0 18px; }
+.plans .name { font-weight: 800; color: #4c5d72; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 10px 0 0; }
+ol.steps li { counter-increment: s; position: relative; padding: 0 0 18px 50px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; background: #0B1F3A; color: #F4F7F6; font-weight: 900; text-align: center; line-height: 34px; }
+ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ul.plain li { margin-bottom: 6px; }
+.callout { background: #0B1F3A; color: #F4F7F6; border-radius: 12px; padding: 28px 30px; margin: 40px 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; }
+.callout h2 { margin: 0; font-size: 24px; }
+.callout p { margin: 4px 0 0; color: #c9d6e3; }
+.callout .grow { flex: 1 1 300px; }
+footer { border-top: 1px solid #d9e2e0; padding: 26px 0 36px; font-size: 15px; color: #4c5d72; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { color: #4c5d72; }
+footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 20px; }
+  .plans > div { border-right: 0; border-bottom: 1px solid #d9e2e0; }
+  .plans > div:last-child { border-bottom: 0; }
+  .top .btn { display: none; }
+}
+.doc { max-width: 720px; padding-top: 18px; }
+.doc h2 { font-size: 22px; margin-top: 30px; }
+</style>
+</head>
+<body>
+<div style="font-family: Nunito, system-ui, sans-serif; font-size: 17px; line-height: 1.55; color: #0B1F3A; background: #F4F7F6; min-height: 100%;">
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
+    <nav>
+      <a href="/features/">Features</a>
+      <a href="/commands/">Commands</a>
+      <a href="/premium/">Premium</a>
+      <a href="/custom-bot/">Custom Bot</a>
+    </nav>
+    <a class="btn small" href="/invite/">Add to Discord</a>
+  </div>
+</header>
+
+<div class="pagehead">
+  <div class="wrap">
+    <h1>Privacy policy</h1>
+    <p>Last updated: October 23, 2026</p>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <article class="doc">
+      <p>Milo is a Discord bot that runs miles programs for airlines in the Roblox game PTFS. This policy explains what Milo stores, why, and how to delete it. Questions: the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <h2>What Milo stores</h2>
+      <ul class="plain">
+        <li><b>Discord IDs</b>: your user ID, and the IDs of the servers, roles and channels Milo is set up with.</li>
+        <li><b>Your activity in each airline</b>: miles balance, lifetime miles, flights you claimed or were added to, tier, achievements, reward claims, and a history of miles earned and spent.</li>
+        <li><b>Roblox account</b> (only if you link one): your Roblox user ID and username, so Milo can check Premium purchases and subscriptions. If you link with <b>Sign in with Roblox</b>, Milo only asks Roblox for those two things and lets the sign-in go straight away.</li>
+        <li><b>Premium records</b>: which server got Premium, when, from which plan, and which Roblox account bought it.</li>
+        <li><b>Custom Bot</b> (only if you use it): your bot's application ID, name and token. The token is stored encrypted and is only used to run your bot.</li>
+        <li><b>Server settings</b>: the settings, branding, tiers, achievements, routes, rewards, events and alliances each airline sets up, and who owns each server Milo is in.</li>
+      </ul>
+      <p>Milo doesn't read or store your messages, and only sees what you send to it through its commands.</p>
+      <h2>Milo Utilities (the support server bot)</h2>
+      <p>Milo Utilities only works in the Milo support server. To moderate it, it reads messages sent there and stores:</p>
+      <ul class="plain">
+        <li><b>Moderation cases</b>: warns, timeouts, kicks, bans and notes, with who did them and why.</li>
+        <li><b>Levels</b>: your XP and level in the support server.</li>
+        <li><b>Logs</b>: edited and deleted messages, joins, leaves and role changes are posted in staff-only log channels in the support server.</li>
+      </ul>
+      <p>It also gives server owners who use Milo the Customer, Premium and Custom Bot roles there, based on the data above.</p>
+      <h2>Why</h2>
+      <p>To run the features you or your airline use: give and show miles, tiers and achievements, run reward shops, check Premium purchases on Roblox, and run Custom Bots. In the support server, Milo Utilities uses its data to keep the server safe. Milo never uses your data for ads.</p>
+      <h2>The website</h2>
+      <p>milo-bot.xyz has no accounts, cookies, ads or tracking. It's hosted on GitHub Pages and goes through Cloudflare, which see your IP address and browser details to deliver the pages and block attacks, under their own privacy policies. The Roblox sign-in page (milo-bot.xyz/link) loads its font from Google Fonts. It shows your sign-in code only in your browser and doesn't send it anywhere.</p>
+      <h2>Sharing</h2>
+      <p>Milo doesn't sell your data. Some of it is visible in the server you use it in (for example leaderboards, profile cards and flight lists). Milo checks Roblox's own services to confirm purchases and links, and Discord delivers everything Milo sends. Data is only handed to anyone else if the law requires it.</p>
+      <h2>Keeping it safe</h2>
+      <p>Data is stored on a private device run by the bot owner and backed up every day. Only the bot owner can get to the database, and Custom Bot tokens are encrypted. No system is perfectly safe, so if something ever leaks that affects you, it will be announced in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <h2>How long it's kept</h2>
+      <p>Until you delete it, or until the airline's server removes Milo and asks for its data to be deleted. Daily backups are kept for 14 days. Premium purchase records are kept as long as needed for payment disputes.</p>
+      <h2>Deleting your data</h2>
+      <p>Run <code>/privacy</code> in any server with Milo:</p>
+      <ul class="plain">
+        <li><b>Delete my data here</b> removes your miles, flights, achievements, history and reward claims in that server.</li>
+        <li><b>Delete everywhere</b> does that in every server, and removes your Roblox link.</li>
+      </ul>
+      <p>Server admins can ask for a whole server's data to be deleted at the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <h2>Your rights</h2>
+      <p>You can also ask in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a> for a copy of your data, to have something corrected, or for Milo to stop using it. You'll get an answer within 30 days. Depending on where you live (for example the EU or the UK), you can also complain to your local data protection authority.</p>
+      <h2>Children</h2>
+      <p>Milo is for people old enough to use Discord under Discord's Terms of Service (13 in most countries). The monthly Premium and Custom Bot plans are bought in a Roblox game that only lets in players 16 and over. If you think a child under that age has data in Milo, tell us in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a> and it will be deleted.</p>
+      <h2>Changes</h2>
+      <p>If this policy changes, the date at the top changes too. Big changes are announced in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+    </article>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
+    <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="/terms/">Terms</a>
+    <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
+  </div>
+</footer>
+</div>
+</body>
+</html>

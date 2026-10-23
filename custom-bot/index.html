@@ -12,9 +12,63 @@
 <meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
 <meta name="theme-color" content="#0B1F3A">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/assets/style.css">
+<style>
+@font-face { font-family: "Nunito"; src: url("/assets/nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+body { margin: 0; background: #F4F7F6; }
+a { color: #0B1F3A; text-decoration-color: #2EC4B6; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #1f9a8f; }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: .88em; background: #e4ebea; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.top { background: #0B1F3A; color: #F4F7F6; }
+.top .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 26px; padding-top: 16px; padding-bottom: 16px; }
+.wordmark { display: flex; align-items: center; gap: 8px; color: #F4F7F6; text-decoration: none; font-weight: 900; font-size: 27px; letter-spacing: -.5px; }
+.wordmark:hover { color: #F4F7F6; }
+.wordmark img { width: 34px; height: 34px; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-right: auto; }
+.top nav a { color: #c9d6e3; text-decoration: none; font-weight: 700; font-size: 16px; }
+.top nav a:hover, .top nav a.on { color: #fff; }
+.top nav a.on { box-shadow: 0 2px 0 #2EC4B6; }
+.btn { display: inline-block; background: #2EC4B6; color: #0B1F3A; font-weight: 800; text-decoration: none; padding: 11px 20px; border-radius: 8px; font-size: 17px; line-height: 1.2; }
+.btn:hover { background: #46d3c6; color: #0B1F3A; }
+.btn.small { padding: 8px 14px; font-size: 15px; }
+.pagehead { background: #0B1F3A; color: #F4F7F6; padding: 30px 0 38px; }
+.pagehead h1 { margin: 0 0 6px; font-size: 36px; font-weight: 900; letter-spacing: -.5px; }
+.pagehead p { margin: 0; color: #c9d6e3; max-width: 40em; font-size: 18px; }
+main { padding: 12px 0 40px; }
+section { padding: 34px 0 10px; }
+h2 { font-size: 28px; font-weight: 900; margin: 0 0 10px; letter-spacing: -.3px; }
+p { margin: 0 0 14px; }
+.lead { font-size: 19px; color: #4c5d72; }
+.intro { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr); gap: 40px; align-items: center; }
+.muted { color: #4c5d72; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+.shot { border: 2px dashed #b6c4c1; border-radius: 10px; background: #eaf0ee; color: #4c5d72; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 320px; padding: 20px; font-size: 15px; font-weight: 700; }
+.plans { display: flex; flex-wrap: wrap; background: #fff; border-radius: 10px; border: 1px solid #d9e2e0; margin: 14px 0 8px; max-width: 340px; }
+.plans > div { flex: 1 1 220px; padding: 20px 22px; }
+.plans .price { font-size: 30px; font-weight: 900; }
+.plans .price small { font-size: 16px; font-weight: 700; color: #4c5d72; }
+.plans .name { font-weight: 800; color: #4c5d72; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 10px 0 0; }
+ol.steps li { counter-increment: s; position: relative; padding: 0 0 18px 50px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; background: #0B1F3A; color: #F4F7F6; font-weight: 900; text-align: center; line-height: 34px; }
+ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ul.plain li { margin-bottom: 6px; }
+.callout { background: #0B1F3A; color: #F4F7F6; border-radius: 12px; padding: 28px 30px; margin: 40px 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; }
+.callout h2 { margin: 0; font-size: 24px; }
+.callout p { margin: 4px 0 0; color: #c9d6e3; }
+.callout .grow { flex: 1 1 300px; }
+footer { border-top: 1px solid #d9e2e0; padding: 26px 0 36px; font-size: 15px; color: #4c5d72; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { color: #4c5d72; }
+footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
+@media (max-width: 760px) {
+  .split, .intro { grid-template-columns: 1fr; gap: 20px; }
+  .top .btn { display: none; }
+}
+</style>
 </head>
 <body>
+<div style="font-family: Nunito, system-ui, sans-serif; font-size: 17px; line-height: 1.55; color: #0B1F3A; background: #F4F7F6; min-height: 100%;">
 <header class="top">
   <div class="wrap">
     <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
@@ -22,11 +76,12 @@
       <a href="/features/">Features</a>
       <a href="/commands/">Commands</a>
       <a href="/premium/">Premium</a>
-      <a href="/custom-bot/" aria-current="page">Custom Bot</a>
+      <a class="on" href="/custom-bot/">Custom Bot</a>
     </nav>
     <a class="btn small" href="/invite/">Add to Discord</a>
   </div>
 </header>
+
 <div class="pagehead">
   <div class="wrap">
     <h1>Custom Bot</h1>
@@ -37,45 +92,37 @@
 <main>
   <div class="wrap">
     <section>
-      <div class="split">
+      <div class="intro">
         <div>
-          <p class="lead">Custom Bot is an add-on for Premium airlines. You make a bot in the Discord Developer
-          Portal, give milo its token, and from then on your bot answers <code>/claim</code>,
-          <code>/miles</code> and everything else in your server.</p>
-          <p>Your passengers' miles, flights and settings carry straight over, so nothing restarts. Once your bot
-          joins, milo leaves the server so commands don't show up twice.</p>
-          <div class="plans" style="max-width:340px">
-            <div>
-              <div class="name">Custom Bot</div>
-              <div class="price">R$ 300 <small>/ month</small></div>
-              <p class="muted" style="margin:0">On top of Premium. Not part of the free trial.</p>
-            </div>
+          <p class="lead">Custom Bot is an add-on for Premium airlines. You make a bot in the Discord Developer Portal, give milo its token, and from then on your bot answers <code>/claim</code>, <code>/miles</code> and everything else in your server.</p>
+          <p>Your passengers' miles, flights and settings carry straight over, so nothing restarts. Once your bot joins, milo leaves the server so commands don't show up twice.</p>
+        </div>
+        <div class="plans" style="margin: 0; max-width: none;">
+          <div>
+            <div class="name">Custom Bot</div>
+            <div class="price">R$ 300 <small>/ month</small></div>
+            <p class="muted" style="margin: 0 0 6px;">On top of Premium. Not part of the free trial.</p>
+            
           </div>
         </div>
-        <div class="shot tall">Screenshot: an airline's own bot posting a flight in Discord</div>
       </div>
     </section>
 
     <section>
       <h2>Setting it up</h2>
       <ol class="steps">
-        <li><b>Subscribe to <a href="https://www.roblox.com/games/18247649448/milo-Shop#!/store">Custom Bot</a></b> on Roblox and claim it the same way
-        as Premium, with <b>Claim Premium</b> on <code>/premium</code>. Your server needs Premium as well.</li>
-        <li><b>Run <code>/custombot setup</code>.</b> It lists the steps for making the bot in the Developer
-        Portal and has an <b>Enter token</b> button for when you're done.</li>
+        <li><b>Subscribe to Custom Bot</b> in the <a href="https://www.roblox.com/games/18247649448/milo-Shop">milo Shop</a> game (16+, a Roblox rule for new games) and claim it the same way as Premium, with <b>Claim Premium</b> on <code>/premium</code>. Your server needs Premium as well.</li>
+        <li><b>Run <code>/custombot setup</code>.</b> It lists the steps for making the bot in the Developer Portal and has an <b>Enter token</b> button for when you're done.</li>
         <li><b>Add your bot</b> with the button milo gives you. That's it.</li>
       </ol>
-      <p><code>/custombot status</code> tells you whether it's online, and <code>/custombot remove</code> switches
-      you back to milo whenever you like. Miles and settings stay either way.</p>
+      <p><code>/custombot status</code> tells you whether it's online, and <code>/custombot remove</code> switches you back to milo whenever you like. Miles and settings stay either way.</p>
     </section>
 
     <section>
       <h2>Good to know</h2>
       <ul class="plain">
-        <li>If you cancel, your bot keeps running until the end of the month you paid for. Then it posts a link to
-        invite milo back and goes offline. It comes back by itself if you renew.</li>
-        <li>If you reset your bot's token in the Developer Portal, milo stops it and won't keep retrying. Run
-        <code>/custombot setup</code> again with the new token.</li>
+        <li>If you cancel, your bot keeps running until the end of the month you paid for. Then it posts a link to invite milo back and goes offline. It comes back by itself if you renew.</li>
+        <li>If you reset your bot's token in the Developer Portal, milo stops it and won't keep retrying. Run <code>/custombot setup</code> again with the new token.</li>
         <li>Your bot runs alongside milo, so if milo is ever down for maintenance, yours is too.</li>
       </ul>
     </section>
@@ -89,14 +136,16 @@
     </div>
   </div>
 </main>
+
 <footer>
   <div class="wrap">
     <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
     <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vQ2aJY8wznRWtZervBzT9qdybBD7tIZwBarFXPyVMgGYL8mH23yT4iZwswvsJkdyMjI6jf54b5B3PDY/pub">Privacy policy</a>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vSMSjcQ5gONOlvXYWmrGIHIYTxuejfHN8LNlNqK2IRm31i4ZxQmjNl58iIXmZ3eehfiBrLxhLV3OAn7/pub">Terms</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="/terms/">Terms</a>
     <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
   </div>
 </footer>
+</div>
 </body>
 </html>

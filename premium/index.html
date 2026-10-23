@@ -12,26 +12,85 @@
 <meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
 <meta name="theme-color" content="#0B1F3A">
 <link rel="icon" type="image/png" href="/assets/favicon.png">
-<link rel="stylesheet" href="/assets/style.css">
+<style>
+@font-face { font-family: "Nunito"; src: url("/assets/nunito.ttf") format("truetype"); font-weight: 200 1000; font-display: swap; }
+body { margin: 0; background: #F4F7F6; }
+a { color: #0B1F3A; text-decoration-color: #2EC4B6; text-decoration-thickness: 2px; text-underline-offset: 3px; }
+a:hover { color: #1f9a8f; }
+code { font-family: ui-monospace, Consolas, "Courier New", monospace; font-size: .88em; background: #e4ebea; padding: 1px 5px; border-radius: 4px; white-space: nowrap; }
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; box-sizing: border-box; }
+.top { background: #0B1F3A; color: #F4F7F6; }
+.top .wrap { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 26px; padding-top: 16px; padding-bottom: 16px; }
+.wordmark { display: flex; align-items: center; gap: 8px; color: #F4F7F6; text-decoration: none; font-weight: 900; font-size: 27px; letter-spacing: -.5px; }
+.wordmark:hover { color: #F4F7F6; }
+.wordmark img { width: 34px; height: 34px; }
+.top nav { display: flex; flex-wrap: wrap; gap: 4px 20px; margin-right: auto; }
+.top nav a { color: #c9d6e3; text-decoration: none; font-weight: 700; font-size: 16px; }
+.top nav a:hover, .top nav a.on { color: #fff; }
+.top nav a.on { box-shadow: 0 2px 0 #2EC4B6; }
+.btn { display: inline-block; background: #2EC4B6; color: #0B1F3A; font-weight: 800; text-decoration: none; padding: 11px 20px; border-radius: 8px; font-size: 17px; line-height: 1.2; }
+.btn:hover { background: #46d3c6; color: #0B1F3A; }
+.btn.small { padding: 8px 14px; font-size: 15px; }
+.pagehead { background: #0B1F3A; color: #F4F7F6; padding: 30px 0 38px; }
+.pagehead h1 { margin: 0 0 6px; font-size: 36px; font-weight: 900; letter-spacing: -.5px; }
+.pagehead p { margin: 0; color: #c9d6e3; max-width: 40em; font-size: 18px; }
+main { padding: 12px 0 40px; }
+section { padding: 34px 0 10px; }
+h2 { font-size: 28px; font-weight: 900; margin: 0 0 10px; letter-spacing: -.3px; }
+h3 { font-size: 20px; font-weight: 800; margin: 26px 0 6px; }
+p { margin: 0 0 14px; }
+.muted { color: #4c5d72; }
+.split { display: grid; grid-template-columns: 1.3fr 1fr; gap: 40px; align-items: start; }
+.shot { border: 2px dashed #b6c4c1; border-radius: 10px; background: #eaf0ee; color: #4c5d72; display: flex; align-items: center; justify-content: center; text-align: center; min-height: 320px; padding: 20px; font-size: 15px; font-weight: 700; }
+.plans { display: flex; flex-wrap: wrap; background: #fff; border-radius: 10px; border: 1px solid #d9e2e0; margin: 14px 0 8px; }
+.plans > div { flex: 1 1 220px; padding: 20px 22px; border-right: 1px solid #d9e2e0; }
+.plans > div:last-child { border-right: 0; }
+.plans .price { font-size: 30px; font-weight: 900; }
+.plans .price small { font-size: 16px; font-weight: 700; color: #4c5d72; }
+.plans .age { margin: 0; font-size: 14px; font-weight: 800; color: #9a5b00; }
+.plans .age.ok { color: #1f7a71; }
+.note { background: #fff4d6; border-radius: 8px; padding: 14px 18px; margin: 10px 0 18px; }
+.plans .name { font-weight: 800; color: #4c5d72; font-size: 15px; text-transform: uppercase; letter-spacing: .5px; }
+ol.steps { list-style: none; counter-reset: s; padding: 0; margin: 10px 0 0; }
+ol.steps li { counter-increment: s; position: relative; padding: 0 0 18px 50px; }
+ol.steps li::before { content: counter(s); position: absolute; left: 0; top: -2px; width: 34px; height: 34px; border-radius: 50%; background: #0B1F3A; color: #F4F7F6; font-weight: 900; text-align: center; line-height: 34px; }
+ul.plain { padding-left: 20px; margin: 0 0 14px; }
+ul.plain li { margin-bottom: 6px; }
+.callout { background: #0B1F3A; color: #F4F7F6; border-radius: 12px; padding: 28px 30px; margin: 40px 0 10px; display: flex; flex-wrap: wrap; align-items: center; gap: 16px 30px; }
+.callout h2 { margin: 0; font-size: 24px; }
+.callout p { margin: 4px 0 0; color: #c9d6e3; }
+.callout .grow { flex: 1 1 300px; }
+footer { border-top: 1px solid #d9e2e0; padding: 26px 0 36px; font-size: 15px; color: #4c5d72; }
+footer .wrap { display: flex; flex-wrap: wrap; gap: 8px 22px; }
+footer a { color: #4c5d72; }
+footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 20px; }
+  .plans > div { border-right: 0; border-bottom: 1px solid #d9e2e0; }
+  .plans > div:last-child { border-bottom: 0; }
+  .top .btn { display: none; }
+}
+</style>
 </head>
 <body>
+<div style="font-family: Nunito, system-ui, sans-serif; font-size: 17px; line-height: 1.55; color: #0B1F3A; background: #F4F7F6; min-height: 100%;">
 <header class="top">
   <div class="wrap">
     <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
     <nav>
       <a href="/features/">Features</a>
       <a href="/commands/">Commands</a>
-      <a href="/premium/" aria-current="page">Premium</a>
+      <a class="on" href="/premium/">Premium</a>
       <a href="/custom-bot/">Custom Bot</a>
     </nav>
     <a class="btn small" href="/invite/">Add to Discord</a>
   </div>
 </header>
+
 <div class="pagehead">
   <div class="wrap">
     <h1>milo Premium</h1>
-    <p>For airlines that want milo to look like their own and do a bit more. You pay in Robux and sign in with
-    your Roblox account from Discord.</p>
+    <p>For airlines that want milo to look like their own and do a bit more. You pay in Robux and sign in with your Roblox account from Discord.</p>
   </div>
 </div>
 
@@ -42,6 +101,7 @@
         <div class="name">Monthly</div>
         <div class="price">R$ 100 <small>/ month</small></div>
         <p class="muted">Cancel whenever. Premium runs until the end of the month you paid for.</p>
+        
       </div>
       <div>
         <div class="name">Lifetime</div>
@@ -54,46 +114,38 @@
         <p class="muted">Once per airline, if you've never had Premium. Nothing to cancel.</p>
       </div>
     </div>
+    <p class="note">Roblox only lets players 16 and over into new games, so the monthly plan and the free trial, which live in the milo Shop game, are 16+ for now. Under 16? The lifetime pass is sold on the Roblox website, so you can still get Premium.</p>
+    <p style="display: flex; flex-wrap: wrap; gap: 12px 22px; align-items: center;"><a class="btn" href="https://www.roblox.com/games/18247649448/milo-Shop">Open the milo Shop</a><a href="https://www.roblox.com/game-pass/1166620584" style="font-weight: 700;">Lifetime pass on Roblox</a></p>
 
     <section>
-      <div class="split wide-left">
+      <div class="split">
         <div>
           <h2>What you get</h2>
           <h3>Your airline's look</h3>
-          <p>Your name, logo and color on every message and profile card, your own emojis in place of milo's, a
-          nickname for the bot in your server, and no "Powered by milo" line. It's all under
-          <code>/branding</code>.</p>
+          <p>Your name, logo and color on every message and profile card, your own emojis in place of milo's, a nickname for the bot in your server, and no "Powered by milo" line. It's all under <code>/branding</code>.</p>
           <h3>Events</h3>
-          <p><code>/event start</code> multiplies the miles on every flight for a set time. A 2x Double Miles
-          Weekend is the classic one, but anything from 1.1x to 5x works, for up to two weeks.</p>
+          <p><code>/event start</code> multiplies the miles on every flight for a set time. A 2x Double Miles Weekend is the classic one, but anything from 1.1x to 5x works, for up to two weeks.</p>
           <h3>Alliances</h3>
-          <p>Team up with up to five other Premium airlines. When someone flies with one of you, they also get
-          partner miles (50% by default) at every other airline in the alliance they're a member of.</p>
+          <p>Team up with up to five other Premium airlines. When someone flies with one of you, they also get partner miles (50% by default) at every other airline in the alliance they're a member of.</p>
           <h3>Daily check-in</h3>
-          <p>Members run <code>/daily</code> once a day for bonus miles, with extra for each day in a row, up to
-          a week.</p>
+          <p>Members run <code>/daily</code> once a day for bonus miles, with extra for each day in a row, up to a week.</p>
           <h3>Crew miles</h3>
           <p>Mention your crew when you log a flight and they earn miles too, with their own multiplier.</p>
           <h3>Your own tiers and achievements</h3>
           <p>Rename the tiers, add up to 10, and write up to 40 achievements of your own.</p>
           <h3>And a couple of smaller things</h3>
-          <p><code>/setup wizard</code> walks you through setup, and on the 1st of every month your log channel
-          gets a report with last month's flights, miles, top flyers and busiest routes.</p>
+          <p><code>/setup wizard</code> walks you through setup, and on the 1st of every month your log channel gets a report with last month's flights, miles, top flyers and busiest routes.</p>
         </div>
-        <div class="shot tall">Screenshot: a profile card with an airline's own colors and logo</div>
+        
       </div>
     </section>
 
     <section>
       <h2>How to get it</h2>
       <ol class="steps">
-        <li><b>Buy a plan on Roblox:</b> the <a href="https://www.roblox.com/games/18247649448/milo-Shop#!/store">monthly subscription</a> or the
-        <a href="https://www.roblox.com/game-pass/1166620584">lifetime pass</a>.</li>
-        <li><b>Link your Roblox account.</b> Run <code>/premium</code> in your server, press <b>Link Roblox</b>,
-        then <b>Sign in with Roblox</b>. Roblox asks you to press Allow and gives you a code to paste back in
-        Discord.</li>
-        <li><b>Press Claim Premium</b> on <code>/premium</code>. milo finds what you bought and asks before
-        turning it on. You need Manage Server in that airline.</li>
+        <li><b>Buy a plan.</b> The monthly plan is in the <a href="https://www.roblox.com/games/18247649448/milo-Shop">milo Shop</a> game (16+). The <a href="https://www.roblox.com/game-pass/1166620584">lifetime pass</a> is on the Roblox website, for anyone.</li>
+        <li><b>Link your Roblox account.</b> Run <code>/premium</code> in your server, press <b>Link Roblox</b>, then <b>Sign in with Roblox</b>. Roblox asks you to press Allow and gives you a code to paste back in Discord.</li>
+        <li><b>Press Claim Premium</b> on <code>/premium</code>. milo finds what you bought and asks before turning it on. You need Manage Server in that airline.</li>
       </ol>
     </section>
 
@@ -101,8 +153,7 @@
       <h2>When Premium ends</h2>
       <ul class="plain">
         <li>milo warns you in your log channel 3 days before.</li>
-        <li>Everything goes back to milo's own look, but your branding, tiers and emojis are saved and come back
-        if you renew.</li>
+        <li>Everything goes back to milo's own look, but your branding, tiers and emojis are saved and come back if you renew.</li>
         <li>Nobody loses any miles.</li>
       </ul>
       <p>Moving a subscription to a different server? Ask in the <a href="https://discord.gg/qpW6Wdjt2f">support server</a>.</p>
@@ -117,14 +168,16 @@
     </div>
   </div>
 </main>
+
 <footer>
   <div class="wrap">
     <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
     <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vQ2aJY8wznRWtZervBzT9qdybBD7tIZwBarFXPyVMgGYL8mH23yT4iZwswvsJkdyMjI6jf54b5B3PDY/pub">Privacy policy</a>
-    <a href="https://docs.google.com/document/d/e/2PACX-1vSMSjcQ5gONOlvXYWmrGIHIYTxuejfHN8LNlNqK2IRm31i4ZxQmjNl58iIXmZ3eehfiBrLxhLV3OAn7/pub">Terms</a>
+    <a href="/privacy/">Privacy policy</a>
+    <a href="/terms/">Terms</a>
     <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
   </div>
 </footer>
+</div>
 </body>
 </html>

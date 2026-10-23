@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Features - milo</title>
+<meta name="description" content="Claim codes, miles by real distance, tiers, achievements, a reward shop and profile cards. Everything milo does for a PTFS airline.">
+<link rel="canonical" href="https://milo-bot.xyz/features/">
+<meta property="og:title" content="Features - milo">
+<meta property="og:description" content="Claim codes, miles by real distance, tiers, achievements, a reward shop and profile cards. Everything milo does for a PTFS airline.">
+<meta property="og:url" content="https://milo-bot.xyz/features/">
+<meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
+    <nav>
+      <a href="/features/" aria-current="page">Features</a>
+      <a href="/commands/">Commands</a>
+      <a href="/premium/">Premium</a>
+      <a href="/custom-bot/">Custom Bot</a>
+    </nav>
+    <a class="btn small" href="/invite/">Add to Discord</a>
+  </div>
+</header>
+<div class="pagehead">
+  <div class="wrap">
+    <h1>What milo does</h1>
+    <p>Everything on this page is free. The Premium extras are on <a href="/premium/" style="color:#fff">their own page</a>.</p>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <section>
+      <h2>Flights and claim codes</h2>
+      <div class="split wide-left">
+        <div>
+          <p>There are no scheduled flights to set up. You fly in PTFS like you always do, and afterwards a
+          staff member logs it with <code>/flight log</code>. Any real airport works: type JFK, KJFK or just
+          search "Heathrow".</p>
+          <p>milo replies privately with a code for each cabin and posts a "flight landed" message so passengers
+          know to claim. Claims stay open for 60 minutes unless you change it, per flight or for the whole
+          server.</p>
+          <p>Every flight gets an ID, and staff use it to fix things:</p>
+          <div class="tablewrap">
+            <table>
+              <tr><th>If...</th><th>Use</th></tr>
+              <tr><td>you lost the codes</td><td><code>/flight codes</code></td></tr>
+              <tr><td>someone missed the window</td><td><code>/flight add</code></td></tr>
+              <tr><td>someone claimed who wasn't there</td><td><code>/flight remove</code></td></tr>
+              <tr><td>the flight shouldn't count</td><td><code>/flight void</code></td></tr>
+              <tr><td>you want to see who was on it</td><td><code>/flight info</code></td></tr>
+            </table>
+          </div>
+        </div>
+        <div class="shot">Screenshot: staff view after /flight log, with the three codes</div>
+      </div>
+      <h3>Can people cheat with codes?</h3>
+      <p>A bit, and it's worth being honest about. A code works for anyone who has it until claims close, so a
+      passenger could pass it to a friend. Check <code>/flight info</code> after a flight and remove anyone who
+      wasn't on board, and keep the window short. What codes do stop is cabin swapping and guessing: each
+      cabin has its own code, and each person gets 5 wrong tries a minute.</p>
+      <p>If you'd rather skip codes completely, log the flight and add each passenger yourself with
+      <code>/flight add</code>.</p>
+    </section>
+
+    <section>
+      <h2>How miles are worked out</h2>
+      <p>By default a flight earns one mile per mile flown, using the great-circle distance between the two
+      airports. Then the cabin multiplier kicks in: Economy x1, Business x1.5, First x2.</p>
+      <p class="note">LHR to JFK in Business is 3,442 x 1.5, so about <b>5,163 miles</b>.</p>
+      <p>Prefer a flat amount per flight? <code>/setup earning</code> switches modes and changes the
+      multipliers. <code>/route set</code> gives one route a fixed amount in both directions, which is handy for
+      short hops you want to be worth more. Staff can also give or take miles by hand with
+      <code>/adjust</code>, and the reason shows up in the member's history.</p>
+    </section>
+
+    <section>
+      <div class="split">
+        <div>
+          <h2>Tiers</h2>
+          <p>Every member has a <b>balance</b> (what they can spend) and <b>lifetime</b> miles (everything they've
+          ever earned). Tiers go by lifetime, so spending in the shop never drops anyone a tier.</p>
+          <div class="tablewrap">
+            <table>
+              <tr><th>Tier</th><th>Lifetime miles</th></tr>
+              <tr><td>Bronze</td><td>0</td></tr>
+              <tr><td>Silver</td><td>5,000</td></tr>
+              <tr><td>Gold</td><td>15,000</td></tr>
+              <tr><td>Platinum</td><td>40,000</td></tr>
+            </table>
+          </div>
+          <p>Change the numbers with <code>/tiers threshold</code>, and hand out a Discord role at each tier with
+          <code>/tiers role</code>.</p>
+        </div>
+        <div>
+          <h2>Achievements</h2>
+          <p>These unlock by themselves. Every server starts with nine:</p>
+          <div class="tablewrap">
+            <table>
+              <tr><th>Achievement</th><th>Goal</th></tr>
+              <tr><td>First flight</td><td>1 flight</td></tr>
+              <tr><td>Frequent flyer</td><td>10 flights</td></tr>
+              <tr><td>Sky regular</td><td>50 flights</td></tr>
+              <tr><td>Centurion</td><td>100 flights</td></tr>
+              <tr><td>Long haul</td><td>A route over 5,000 miles</td></tr>
+              <tr><td>Ultra long haul</td><td>A route over 8,000 miles</td></tr>
+              <tr><td>Explorer</td><td>10 different airports</td></tr>
+              <tr><td>Globetrotter</td><td>10 different countries</td></tr>
+              <tr><td>100K club</td><td>100,000 lifetime miles</td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="split wide-left">
+        <div>
+          <h2>The reward shop</h2>
+          <p>Staff add rewards with a price in miles and, if you like, a stock limit ("5 first class upgrades").
+          Members browse with <code>/shop</code> and buy with <code>/redeem</code>.</p>
+          <p>milo doesn't hand the reward over itself, because a reward can be anything: a role, an upgrade on
+          the next flight, a shout-out. Instead it posts the claim in your log channel, pings staff, and adds a
+          <b>Mark as given</b> button for whoever sorts it out. Need to undo one? <code>/redemptions refund</code>
+          gives the miles back.</p>
+        </div>
+        <div class="shot">Screenshot: a reward claim in the log channel with the Mark as given button</div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Profile cards and the leaderboard</h2>
+      <p><code>/miles</code> draws an image card with someone's balance, lifetime miles, flights, tier, progress
+      to the next tier and rank. <code>/leaderboard</code> ranks everyone in your airline by lifetime miles, and
+      <code>/history</code> shows the last ten things that changed their miles.</p>
+    </section>
+
+    <section>
+      <h2>Privacy</h2>
+      <p>milo doesn't read your messages and doesn't share or sell anything. Anyone can run
+      <code>/privacy</code> to see what milo keeps about them and delete it, in one server or everywhere.</p>
+    </section>
+
+    <div class="callout">
+      <div class="grow">
+        <h2>Ready to try it?</h2>
+        <p>It's free, and you can be logging flights in a few minutes.</p>
+      </div>
+      <a class="btn" href="/invite/">Add to Discord</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
+    <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vQ2aJY8wznRWtZervBzT9qdybBD7tIZwBarFXPyVMgGYL8mH23yT4iZwswvsJkdyMjI6jf54b5B3PDY/pub">Privacy policy</a>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vSMSjcQ5gONOlvXYWmrGIHIYTxuejfHN8LNlNqK2IRm31i4ZxQmjNl58iIXmZ3eehfiBrLxhLV3OAn7/pub">Terms</a>
+    <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
+  </div>
+</footer>
+</body>
+</html>

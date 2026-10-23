@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Commands - milo</title>
+<meta name="description" content="Every milo slash command for passengers, staff and admins, plus the Premium ones.">
+<link rel="canonical" href="https://milo-bot.xyz/commands/">
+<meta property="og:title" content="Commands - milo">
+<meta property="og:description" content="Every milo slash command for passengers, staff and admins, plus the Premium ones.">
+<meta property="og:url" content="https://milo-bot.xyz/commands/">
+<meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
+    <nav>
+      <a href="/features/">Features</a>
+      <a href="/commands/" aria-current="page">Commands</a>
+      <a href="/premium/">Premium</a>
+      <a href="/custom-bot/">Custom Bot</a>
+    </nav>
+    <a class="btn small" href="/invite/">Add to Discord</a>
+  </div>
+</header>
+<div class="pagehead">
+  <div class="wrap">
+    <h1>Commands</h1>
+    <p>All of them are slash commands and work inside a server. Options in [brackets] are optional.</p>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <section style="padding-top:26px">
+      <label for="q" class="muted" style="display:block;font-weight:700;margin-bottom:6px">Looking for something?</label>
+      <input id="q" class="search" type="search" placeholder="Try flight, miles or reward" autocomplete="off">
+    </section>
+
+    <section class="group">
+      <h2>For everyone</h2>
+      <div class="tablewrap">
+      <table>
+        <tr><th>Command</th><th>What it does</th></tr>
+        <tr><td><code>/claim</code></td><td>Claim miles with the code your crew gave your cabin</td></tr>
+        <tr><td><code>/miles [member]</code></td><td>Profile card: balance, lifetime miles, tier, rank and progress</td></tr>
+        <tr><td><code>/history [member]</code></td><td>The last 10 changes to your miles, with reasons</td></tr>
+        <tr><td><code>/leaderboard [page]</code></td><td>Top flyers in this airline by lifetime miles</td></tr>
+        <tr><td><code>/achievements [member]</code></td><td>What's unlocked, and progress on the rest</td></tr>
+        <tr><td><code>/shop</code></td><td>Rewards you can spend miles on</td></tr>
+        <tr><td><code>/redeem</code></td><td>Spend miles on a reward</td></tr>
+        <tr><td><code>/flight info</code></td><td>Who was on a flight, their cabin and miles</td></tr>
+        <tr><td><code>/route check</code></td><td>How many miles a route earns in each cabin</td></tr>
+        <tr><td><code>/route list</code></td><td>Routes with custom miles, and what the rest earn</td></tr>
+        <tr><td><code>/setup view</code></td><td>This server's settings (only you see it)</td></tr>
+        <tr><td><code>/daily</code></td><td>Daily check-in for bonus miles, if the airline turned it on</td></tr>
+        <tr><td><code>/event status</code></td><td>Whether a bonus miles event is running</td></tr>
+        <tr><td><code>/alliance info</code></td><td>The alliance this airline is in</td></tr>
+        <tr><td><code>/premium</code></td><td>What Premium includes, and how to get it</td></tr>
+        <tr><td><code>/privacy</code></td><td>See or delete what milo keeps about you</td></tr>
+        <tr><td><code>/help</code></td><td>Help, by topic</td></tr>
+      </table>
+    </div>
+    </section>
+
+    <section class="group">
+      <h2>For staff</h2>
+      <p class="muted">Staff means the role from <code>/setup staff-role</code>, or anyone with Manage Server.</p>
+      <div class="tablewrap">
+      <table>
+        <tr><th>Command</th><th>What it does</th></tr>
+        <tr><td><code>/flight log</code></td><td>Open a flight for claims and get one code per cabin</td></tr>
+        <tr><td><code>/flight codes</code></td><td>Show a flight's codes again</td></tr>
+        <tr><td><code>/flight close</code></td><td>Stop claims early</td></tr>
+        <tr><td><code>/flight add</code></td><td>Put someone on a flight by hand, even after claims close</td></tr>
+        <tr><td><code>/flight remove</code></td><td>Take someone off a flight and take back their miles</td></tr>
+        <tr><td><code>/flight void</code></td><td>Cancel a flight and take back everyone's miles</td></tr>
+        <tr><td><code>/route set</code></td><td>Fixed miles for one route, both directions</td></tr>
+        <tr><td><code>/route remove</code></td><td>Put a route back to the normal rule</td></tr>
+        <tr><td><code>/adjust add</code></td><td>Give a member miles, with a reason</td></tr>
+        <tr><td><code>/adjust remove</code></td><td>Take miles away, with a reason</td></tr>
+        <tr><td><code>/reward add</code></td><td>Add a reward to the shop, with optional stock</td></tr>
+        <tr><td><code>/reward remove</code></td><td>Take a reward out of the shop</td></tr>
+        <tr><td><code>/redemptions pending</code></td><td>Reward claims still waiting</td></tr>
+        <tr><td><code>/redemptions fulfil</code></td><td>Mark a claim as given</td></tr>
+        <tr><td><code>/redemptions refund</code></td><td>Cancel a claim and give the miles back</td></tr>
+      </table>
+    </div>
+    </section>
+
+    <section class="group">
+      <h2>For admins</h2>
+      <p class="muted">Anyone with Manage Server.</p>
+      <div class="tablewrap">
+      <table>
+        <tr><th>Command</th><th>What it does</th></tr>
+        <tr><td><code>/setup staff-role</code></td><td>Pick the role that counts as staff</td></tr>
+        <tr><td><code>/setup log-channel</code></td><td>Where milo posts flights, rewards and notices</td></tr>
+        <tr><td><code>/setup earning</code></td><td>Distance or flat miles, cabin multipliers, claim window</td></tr>
+        <tr><td><code>/tiers threshold</code></td><td>How many lifetime miles a tier needs</td></tr>
+        <tr><td><code>/tiers role</code></td><td>A role members get when they reach a tier</td></tr>
+      </table>
+    </div>
+    </section>
+
+    <section class="group">
+      <h2>Premium <span class="tag">Premium</span></h2>
+      <p class="muted">These need Premium on the server, and most need Manage Server. <a href="/premium/">What's Premium?</a></p>
+      <div class="tablewrap">
+      <table>
+        <tr><th>Command</th><th>What it does</th></tr>
+        <tr><td><code>/setup wizard</code></td><td>Set everything up step by step</td></tr>
+        <tr><td><code>/setup daily</code></td><td>Turn on /daily, with a streak bonus</td></tr>
+        <tr><td><code>/branding name, color, logo</code></td><td>Your airline's name, color and logo on milo's messages</td></tr>
+        <tr><td><code>/branding footer</code></td><td>Show or hide the Powered by milo line</td></tr>
+        <tr><td><code>/branding nickname</code></td><td>milo's nickname in your server</td></tr>
+        <tr><td><code>/branding emoji set, reset</code></td><td>Swap milo's emojis for your own</td></tr>
+        <tr><td><code>/branding reset</code></td><td>Back to milo's own look</td></tr>
+        <tr><td><code>/tiers rename, add, remove</code></td><td>Your own tiers, up to 10</td></tr>
+        <tr><td><code>/achievement add, edit, remove, reset</code></td><td>Your own achievements, up to 40</td></tr>
+        <tr><td><code>/event start, stop</code></td><td>Bonus miles for a while, like a Double Miles Weekend</td></tr>
+        <tr><td><code>/alliance create, join, leave</code></td><td>Team up with up to 5 other airlines</td></tr>
+        <tr><td><code>/alliance rate, code, kick</code></td><td>Run your alliance, if you lead it</td></tr>
+        <tr><td><code>crew on /flight log</code></td><td>Mention up to 15 crew and they earn miles too</td></tr>
+        <tr><td><code>/custombot setup, status, remove</code></td><td>Run milo as your own bot (Custom Bot add-on)</td></tr>
+      </table>
+    </div>
+    </section>
+
+    <p id="none" class="muted" hidden>Nothing matches that. Try <code>/help</code> in Discord, or ask in the
+    <a href="https://discord.gg/qpW6Wdjt2f">support server</a>.</p>
+    <p class="muted" style="margin-top:20px">Every option for every command is in the <a href="https://milo-bot.gitbook.io/milo-bot-docs/">docs</a>.</p>
+  </div>
+</main>
+<script>
+  var q = document.getElementById("q");
+  q.addEventListener("input", function () {
+    var term = q.value.trim().toLowerCase();
+    var any = false;
+    document.querySelectorAll(".group").forEach(function (group) {
+      var shown = 0;
+      group.querySelectorAll("tr").forEach(function (row, i) {
+        if (i === 0) return;
+        var hit = !term || row.textContent.toLowerCase().indexOf(term) !== -1;
+        row.hidden = !hit;
+        if (hit) shown++;
+      });
+      group.hidden = shown === 0;
+      if (shown) any = true;
+    });
+    document.getElementById("none").hidden = any;
+  });
+</script>
+<footer>
+  <div class="wrap">
+    <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
+    <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vQ2aJY8wznRWtZervBzT9qdybBD7tIZwBarFXPyVMgGYL8mH23yT4iZwswvsJkdyMjI6jf54b5B3PDY/pub">Privacy policy</a>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vSMSjcQ5gONOlvXYWmrGIHIYTxuejfHN8LNlNqK2IRm31i4ZxQmjNl58iIXmZ3eehfiBrLxhLV3OAn7/pub">Terms</a>
+    <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
+  </div>
+</footer>
+</body>
+</html>

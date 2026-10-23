@@ -3,10 +3,149 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>milo</title>
-<meta http-equiv="refresh" content="0; url=https://discord.gg/qpW6Wdjt2f">
+<title>milo - a miles program for your PTFS airline</title>
+<meta name="description" content="milo is a Discord bot that gives PTFS airlines a miles program. Passengers claim miles after each flight, climb tiers, unlock achievements and spend miles on your rewards.">
+<link rel="canonical" href="https://milo-bot.xyz/">
+<meta property="og:title" content="milo - a miles program for your PTFS airline">
+<meta property="og:description" content="milo is a Discord bot that gives PTFS airlines a miles program. Passengers claim miles after each flight, climb tiers, unlock achievements and spend miles on your rewards.">
+<meta property="og:url" content="https://milo-bot.xyz/">
+<meta property="og:image" content="https://milo-bot.xyz/assets/milo-happy.png">
+<meta name="theme-color" content="#0B1F3A">
+<link rel="icon" type="image/png" href="/assets/favicon.png">
+<link rel="stylesheet" href="/assets/style.css">
 </head>
-<body style="font-family: system-ui, sans-serif; background: #0B1F3A; color: #F4F7F6; text-align: center; padding: 40px 16px">
-<p>Taking you to the milo support server... <a style="color: #2EC4B6" href="https://discord.gg/qpW6Wdjt2f">Click here</a> if nothing happens.</p>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="wordmark" href="/"><img src="/assets/milo-happy.png" alt="">milo</a>
+    <nav>
+      <a href="/features/">Features</a>
+      <a href="/commands/">Commands</a>
+      <a href="/premium/">Premium</a>
+      <a href="/custom-bot/">Custom Bot</a>
+    </nav>
+    <a class="btn small" href="/invite/">Add to Discord</a>
+  </div>
+</header>
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Give your PTFS airline a <span>miles program</span>.</h1>
+      <p>milo is a Discord bot. After a flight your staff get one claim code per cabin, passengers type it in
+      Discord, and the miles go straight onto their profile. They climb tiers, unlock achievements and spend
+      what they earn in a shop you stock.</p>
+      <div class="actions">
+        <a class="btn" href="/invite/">Add milo to your server</a>
+        <a class="plain" href="https://discord.gg/qpW6Wdjt2f">Join the support server</a>
+      </div>
+      <small>Free to use. Premium is optional.</small>
+    </div>
+    <img class="mascot" src="/assets/milo-happy.png" alt="milo, a smiling cartoon plane">
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+    <div class="split wide-left">
+      <div class="discord" aria-label="Example of milo in a Discord channel">
+        <div class="msg">
+          <div class="av milo"></div>
+          <div>
+            <span class="name">milo<span class="tag">APP</span></span><span class="time">Today at 20:14</span>
+            <div class="embed">
+              <div class="t">MLO204 has landed</div>
+              London Heathrow to New York JFK. Passengers, use <b>/claim</b> with the code your crew gave your
+              cabin. Claims close in 60 minutes.
+            </div>
+          </div>
+        </div>
+        <div class="msg">
+          <div class="av user"></div>
+          <div>
+            <div class="slash"><b>kayla_flies</b> used /claim</div>
+            <span class="name">milo<span class="tag">APP</span></span><span class="time">Today at 20:16</span>
+            <div class="embed">
+              <div class="t">Welcome back, kayla_flies</div>
+              <div class="f">
+                <div><b>Route</b>LHR to JFK</div>
+                <div><b>Cabin</b>Business</div>
+                <div><b>Miles</b>+5,163</div>
+              </div>
+              <div class="foot">Balance 18,420 - Gold</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h2 style="margin-top:26px">How a flight works</h2>
+        <ol class="steps">
+          <li><b>Your flight lands in PTFS.</b> Someone on staff runs <code>/flight log</code> with the flight
+          number and the two airports.</li>
+          <li><b>milo hands them three codes</b>, one each for Economy, Business and First. Only they see them.</li>
+          <li><b>Staff give out the codes</b> however suits you: in game chat, a passengers channel, anywhere.</li>
+          <li><b>Passengers run <code>/claim</code>.</b> The code decides the cabin, so nobody gets First on an
+          Economy ticket.</li>
+        </ol>
+      </div>
+    </div>
+
+    <section>
+      <div class="split">
+        <div class="shot tall">Screenshot: a /miles profile card</div>
+        <div>
+          <h2>What your passengers get</h2>
+          <p>Miles are based on the real distance between the two airports, so a long haul is worth more than a
+          hop. London to New York is about 3,442 miles, and Business and First pay 1.5x and 2x.</p>
+          <ul class="plain">
+            <li>A profile card with their balance, tier and rank (<code>/miles</code>)</li>
+            <li>Tiers from Bronze up to Platinum, with a Discord role at each one if you want</li>
+            <li>Nine achievements to start, like Long haul and Globetrotter</li>
+            <li>A leaderboard for your airline</li>
+            <li>A reward shop where they spend miles on things you hand out</li>
+          </ul>
+          <p><a href="/features/">See everything milo does</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Setting it up</h2>
+      <p class="lead">Most airlines are running in about five minutes. You need Manage Server for these.</p>
+      <div class="split">
+        <ol class="steps">
+          <li><code>/setup staff-role</code> picks who can log flights and fix miles.</li>
+          <li><code>/setup log-channel</code> picks a staff channel where milo posts every flight and reward claim.</li>
+          <li><code>/reward add</code> puts something in the shop, so miles are worth chasing.</li>
+        </ol>
+        <div>
+          <p>That's all you have to do. If a flight goes wrong later, there's a fix for it: <code>/flight add</code>
+          for someone who missed the claim window, <code>/flight remove</code> for someone who wasn't on board,
+          and <code>/flight void</code> to cancel the whole thing and take the miles back.</p>
+          <p><a href="/commands/">All commands</a></p>
+        </div>
+      </div>
+    </section>
+
+    <div class="callout">
+      <div class="grow">
+        <h2>Want it to look like your airline?</h2>
+        <p>Premium puts your name, logo and color on everything milo posts, and adds events, alliances, daily
+        check-ins and crew miles. R$ 100 a month, and you can try it free for 14 days.</p>
+      </div>
+      <a class="btn" href="/premium/">About Premium</a>
+      <a class="plain" href="/custom-bot/">or run milo as your own bot</a>
+    </div>
+  </div>
+</main>
+<footer>
+  <div class="wrap">
+    <a href="https://discord.gg/qpW6Wdjt2f">Support server</a>
+    <a href="https://milo-bot.gitbook.io/milo-bot-docs/">Docs</a>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vQ2aJY8wznRWtZervBzT9qdybBD7tIZwBarFXPyVMgGYL8mH23yT4iZwswvsJkdyMjI6jf54b5B3PDY/pub">Privacy policy</a>
+    <a href="https://docs.google.com/document/d/e/2PACX-1vSMSjcQ5gONOlvXYWmrGIHIYTxuejfHN8LNlNqK2IRm31i4ZxQmjNl58iIXmZ3eehfiBrLxhLV3OAn7/pub">Terms</a>
+    <span class="last">milo isn't made by or affiliated with Roblox, Discord or PTFS.</span>
+  </div>
+</footer>
 </body>
 </html>

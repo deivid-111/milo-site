@@ -92,14 +92,14 @@ footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
 <div class="pagehead">
   <div class="wrap">
     <h1>Privacy policy</h1>
-    <p>Last updated: October 23, 2026</p>
+    <p>Last updated: October 26, 2026</p>
   </div>
 </div>
 
 <main>
   <div class="wrap">
     <article class="doc">
-      <p>Milo is a Discord bot that runs miles programs for airlines in the Roblox game PTFS. This policy explains what Milo stores, why, and how to delete it. Questions: the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <p>Milo is a Discord bot that runs miles programs for airlines in the Roblox game PTFS. This policy covers Milo, the two bots in the Milo support server (milo Support and Milo Utilities), and the milo-bot.xyz websites. It explains what they store, why, and how to delete it. Questions: the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
       <h2>What Milo stores</h2>
       <ul class="plain">
         <li><b>Discord IDs</b>: your user ID, and the IDs of the servers, roles and channels Milo is set up with.</li>
@@ -110,37 +110,50 @@ footer .last { flex-basis: 100%; margin-top: 6px; font-size: 13px; }
         <li><b>Server settings</b>: the settings, branding, tiers, achievements, routes, rewards, events and alliances each airline sets up, and who owns each server Milo is in.</li>
       </ul>
       <p>Milo doesn't read or store your messages, and only sees what you send to it through its commands.</p>
-      <h2>Milo Utilities (the support server bot)</h2>
-      <p>Milo Utilities only works in the Milo support server. To moderate it, it reads messages sent there and stores:</p>
+      <h2>The support server bots</h2>
+      <p>milo Support and Milo Utilities only work in the Milo support server.</p>
+      <p><b>milo Support</b> (help and tickets) stores:</p>
+      <ul class="plain">
+        <li><b>Tickets</b>: who opened it, the topic, what you wrote in the ticket form (such as your server and the problem), who handled and closed it, when, and your rating if you give one.</li>
+        <li><b>Transcripts</b>: when a ticket closes, the whole conversation (names, avatars, messages, images and files) is saved as a web page on transcript.milo-bot.xyz. The link is long and random, so only people who have it can open it. It's sent to you and to the staff log channel.</li>
+        <li><b>Staff notes</b> on tickets, and a list of members blocked from opening tickets with the reason.</li>
+      </ul>
+      <p><b>Milo Utilities</b> (moderation, roles and applications) reads messages sent in the support server to moderate it, and stores:</p>
       <ul class="plain">
         <li><b>Moderation cases</b>: warns, timeouts, kicks, bans and notes, with who did them and why.</li>
         <li><b>Levels</b>: your XP and level in the support server.</li>
         <li><b>Logs</b>: edited and deleted messages, joins, leaves and role changes are posted in staff-only log channels in the support server.</li>
+        <li><b>Staff applications</b> (only if you apply): your Discord ID and name, the position, your answers, and whether it was accepted or denied, by whom and why.</li>
       </ul>
       <p>It also gives server owners who use Milo the Customer, Premium and Custom Bot roles there, based on the data above.</p>
       <h2>Why</h2>
-      <p>To run the features you or your airline use: give and show miles, tiers and achievements, run reward shops, check Premium purchases on Roblox, and run Custom Bots. In the support server, Milo Utilities uses its data to keep the server safe. Milo never uses your data for ads.</p>
-      <h2>The website</h2>
-      <p>milo-bot.xyz has no accounts, cookies, ads or tracking. It's hosted on GitHub Pages and goes through Cloudflare, which see your IP address and browser details to deliver the pages and block attacks, under their own privacy policies. The Roblox sign-in page (milo-bot.xyz/link) loads its font from Google Fonts. It shows your sign-in code only in your browser and doesn't send it anywhere.</p>
+      <p>To run the features you or your airline use: give and show miles, tiers and achievements, run reward shops, check Premium purchases on Roblox, and run Custom Bots. In the support server, the data is used to answer your questions and tickets, review applications, and keep the server safe. Milo never uses your data for ads.</p>
+      <h2>The websites</h2>
+      <ul class="plain">
+        <li><b>milo-bot.xyz</b> and <b>embeds.milo-bot.xyz</b> have no accounts, cookies, ads or tracking. They're hosted on GitHub Pages. The embed builder keeps your drafts in your own browser only. The Roblox sign-in page (milo-bot.xyz/link) shows your sign-in code only in your browser and doesn't send it anywhere.</li>
+        <li><b>apply.milo-bot.xyz</b> (staff applications) and <b>tickets.milo-bot.xyz</b> (the staff ticket dashboard) use Sign in with Discord. They only ask Discord for your user ID, name and avatar, and check that you're in the support server. A login cookie keeps you signed in for 7 days; only a scrambled copy of it is stored.</li>
+        <li><b>transcript.milo-bot.xyz</b> shows ticket transcripts and runs on Cloudflare Workers, where the transcripts are stored.</li>
+      </ul>
+      <p>All the sites go through Cloudflare, which sees your IP address and browser details to deliver the pages and block attacks. Some pages load fonts from Google Fonts. Both work under their own privacy policies.</p>
       <h2>Sharing</h2>
-      <p>Milo doesn't sell your data. Some of it is visible in the server you use it in (for example leaderboards, profile cards and flight lists). Milo checks Roblox's own services to confirm purchases and links, and Discord delivers everything Milo sends. Data is only handed to anyone else if the law requires it.</p>
+      <p>Milo doesn't sell your data. Some of it is visible in the server you use it in (for example leaderboards, profile cards and flight lists). Milo checks Roblox's own services to confirm purchases and links, Discord delivers everything Milo sends and Cloudflare stores ticket transcripts. Data is only handed to anyone else if the law requires it.</p>
       <h2>Keeping it safe</h2>
-      <p>Data is stored on a private device run by the bot owner and backed up every day. Only the bot owner can get to the database, and Custom Bot tokens are encrypted. No system is perfectly safe, so if something ever leaks that affects you, it will be announced in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <p>Data is stored on a private device run by the bot owner and backed up every day. Only the bot owner can get to the database, and Custom Bot tokens are encrypted. Support staff can see tickets, transcripts and applications. No system is perfectly safe, so if something ever leaks that affects you, it will be announced in the support server.</p>
       <h2>How long it's kept</h2>
-      <p>Until you delete it, or until the airline's server removes Milo and asks for its data to be deleted. Daily backups are kept for 14 days. Premium purchase records are kept as long as needed for payment disputes.</p>
+      <p>Until you delete it, or until the airline's server removes Milo and asks for its data to be deleted. Tickets, transcripts, moderation cases and applications are kept until you ask for them to be deleted. Daily backups are kept for 14 days. Premium purchase records are kept as long as needed for payment disputes.</p>
       <h2>Deleting your data</h2>
       <p>Run <code>/privacy</code> in any server with Milo:</p>
       <ul class="plain">
         <li><b>Delete my data here</b> removes your miles, flights, achievements, history and reward claims in that server.</li>
         <li><b>Delete everywhere</b> does that in every server, and removes your Roblox link.</li>
       </ul>
-      <p>Server admins can ask for a whole server's data to be deleted at the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <p><code>/privacy</code> doesn't cover the support server. To delete your tickets, transcripts, applications or levels, ask there. Moderation cases may be kept to keep the server safe. Server admins can ask for a whole server's data to be deleted there too.</p>
       <h2>Your rights</h2>
-      <p>You can also ask in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a> for a copy of your data, to have something corrected, or for Milo to stop using it. You'll get an answer within 30 days. Depending on where you live (for example the EU or the UK), you can also complain to your local data protection authority.</p>
+      <p>You can also ask in the support server for a copy of your data, to have something corrected, or for Milo to stop using it. You'll get an answer within 30 days. Depending on where you live (for example the EU or the UK), you can also complain to your local data protection authority.</p>
       <h2>Children</h2>
-      <p>Milo is for people old enough to use Discord under Discord's Terms of Service (13 in most countries). The monthly Premium and Custom Bot plans are bought in a Roblox game that only lets in players 16 and over. If you think a child under that age has data in Milo, tell us in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a> and it will be deleted.</p>
+      <p>Milo is for people old enough to use Discord under Discord's Terms of Service (13 in most countries). The monthly Premium and Custom Bot plans are bought in a Roblox game that only lets in players 16 and over. If you think a child under that age has data in Milo, tell us in the support server and it will be deleted.</p>
       <h2>Changes</h2>
-      <p>If this policy changes, the date at the top changes too. Big changes are announced in the <a href="https://discord.gg/qpW6Wdjt2f">Milo support server</a>.</p>
+      <p>If this policy changes, the date at the top changes too. Big changes are announced in the support server.</p>
     </article>
   </div>
 </main>
